@@ -67,5 +67,32 @@ public extension UIView {
         layer.borderWidth = width
     }
     
+    func ajMask(maskRect: CGRect, invert: Bool = false) {
+        let maskLayer = CAShapeLayer()
+        let path = CGMutablePath()
+        if invert {
+            path.addRect(self.bounds)
+        }
+        path.addRect(maskRect)
+        maskLayer.path = path
+        if invert {
+            maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
+        }
+        self.layer.mask = maskLayer
+    }
+    
+    func ajMaskCornerRadius(maskRect: CGRect, cornerRadius: CGFloat, invert: Bool = false) {
+        let maskLayer = CAShapeLayer()
+        let path = CGMutablePath()
+        if invert {
+            path.addRect(self.bounds)
+        }
+        path.addPath(UIBezierPath(roundedRect: maskRect, cornerRadius: cornerRadius).cgPath)
+        maskLayer.path = path
+        if invert {
+            maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
+        }
+        self.layer.mask = maskLayer
+    }
 }
 
