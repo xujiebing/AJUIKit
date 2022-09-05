@@ -1,11 +1,12 @@
 //
-//  AJUIImageExtension.swift
+//  UIImageExtension.swift
 //  AJUIKit
 //
 //  Created by 山鹰 on 2022/8/19.
 //
 
 import AJFoundation
+import UIKit
 
 public func AJImage(named: String, bundleName: String = "") -> UIImage? {
     if named.isEmpty {
