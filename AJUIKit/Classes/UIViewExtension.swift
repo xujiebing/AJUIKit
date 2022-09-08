@@ -52,12 +52,13 @@ public extension UIView {
     }
     
     /// 添加部分圆角
+    /// 需要先设置 self 的宽高，否则无效
     func ajCornerRadius(cornerRadius: CGFloat, rectCorners: UIRectCorner) {
         let maskPath = UIBezierPath(roundedRect: bounds, byRoundingCorners: rectCorners, cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = bounds
         maskLayer.path = maskPath.cgPath
-        layer.mask = maskLayer
+        self.layer.mask = maskLayer
     }
     
     
