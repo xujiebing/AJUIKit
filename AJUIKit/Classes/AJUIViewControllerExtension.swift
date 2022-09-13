@@ -8,7 +8,7 @@
 import UIKit
 
 public extension UIViewController {
-    class func ajCurrentViewController() -> UIViewController {
+    class func currentViewController() -> UIViewController {
         var viewController = UIViewController.init()
         let vc = UIApplication.shared.delegate?.window!?.rootViewController
 //        let vc = UIApplication.shared.keyWindow!.rootViewController!
@@ -30,4 +30,4 @@ public extension UIViewController {
     }
 }
 
-public let AJTopViewController = UIViewController.ajCurrentViewController()
+public let AJTopViewController = UIViewController.currentViewController()
