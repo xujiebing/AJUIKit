@@ -1,16 +1,23 @@
 PODS:
-  - AJUIKit (0.1.0)
+  - AJFoundation (0.1.0)
+  - AJUIKit (0.1.0):
+    - AJFoundation
 
 DEPENDENCIES:
   - AJUIKit (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AJFoundation
 
 EXTERNAL SOURCES:
   AJUIKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AJUIKit: 09d96559bf35f02cbbe253621d1a6bc99440e0db
+  AJFoundation: f930d6cb778628abe457b256f109e4ecf1300607
+  AJUIKit: f4ac3fb7c351e098dd69dfc6afe8af691724a00b
 
-PODFILE CHECKSUM: 26b81e713b378960dd4f4039c67165c2da8ca850
+PODFILE CHECKSUM: cd766e798dc91ee335bb975660c746c6d60c1a83
 
 COCOAPODS: 1.11.3
