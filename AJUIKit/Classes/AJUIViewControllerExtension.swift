@@ -74,5 +74,3 @@ public extension UIViewController {
         return viewController
     }
 }
-
-public let AJTopViewController = UIViewController.currentViewController()
