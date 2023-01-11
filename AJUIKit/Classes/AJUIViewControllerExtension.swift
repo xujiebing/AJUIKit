@@ -8,6 +8,10 @@
 import UIKit
 import AJFoundation
 
+public func AJCurrentVC() -> UIViewController {
+    return UIViewController.currentViewController()
+}
+
 public extension UIViewController {
     class func currentViewController() -> UIViewController {
         var viewController = UIViewController.init()
@@ -54,6 +58,12 @@ public extension UIViewController {
 //            AJLog("visibleVC:\(NSStringFromClass(type(of: visibleVC)))")
             viewController = visibleVC
         }
+        
+        // 兼容 MMDrawerController
+        guard let children = viewController.children.first else {
+            return viewController
+        }
+        viewController = children.currentViewController()
         return viewController
     }
     
