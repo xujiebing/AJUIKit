@@ -8,7 +8,7 @@
 import AJFoundation
 import UIKit
 
-public func AJImage(named: String, bundleName: String = "") -> UIImage? {
+public func AJImage(named: String, bundleName: String = "", _ compatibleWith: UITraitCollection? = nil) -> UIImage? {
     if named.isEmpty {
         return nil
     }
@@ -18,7 +18,7 @@ public func AJImage(named: String, bundleName: String = "") -> UIImage? {
     } else {
         bundle = bundleName.ajBundle()
     }
-    return UIImage(named: named, in: bundle, compatibleWith: nil)
+    return UIImage(named: named, in: bundle, compatibleWith: compatibleWith)
 }
 
 public extension UIImage {
